@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GalleryApp.Pages.PicturesListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="picturesList" 
+                      Grid.Row="2" 
+                      ItemSelected="PictureSelect">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            ImageSource="{Binding Image}"
+                            Text="{Binding Name}"
+                            TextColor="DodgerBlue"
+                            DetailColor="Gray"
+                            />       
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid ColumnDefinitions="Auto" 
+                  RowDefinitions="45" 
+                  Margin="5, 10" >
+                <Button Text="Открыть" 
+                        Clicked="OpenButton_Clicked"  
+                        Grid.Column="0" 
+                        HorizontalOptions="Start"></Button>
+                <Button Text="Удалить" 
+                        Clicked="DeleteButton_Clicked" 
+                        Grid.Column="1" 
+                        HorizontalOptions="Start"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

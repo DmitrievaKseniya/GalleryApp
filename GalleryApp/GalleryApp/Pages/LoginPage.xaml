@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GalleryApp.Pages"
+             x:Class="GalleryApp.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="stackLayout">
+            <Label Text="GalleryApp - Защищенная галерея" 
+                   FontSize="Title" 
+                   Padding="30,10,30,10" 
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center"/>
+            <Entry x:Name="loginEntry" 
+                   Placeholder="Введите PIN для входа" 
+                   Keyboard="Default" 
+                   IsPassword="true" 
+                   CharacterSpacing="2" 
+                   MaxLength="4" 
+                   HorizontalTextAlignment="Center"/>
+            <Button x:Name="loginButton" 
+                    Text="{x:Static local:LoginPage.BUTTON_TEXT}" 
+                    Clicked="Login_Click"/>
+            <Label x:Name="infoMessage" 
+                   FontSize="{DynamicResource Key=errorFont}" 
+                   TextColor="Red" 
+                   Padding="30,10,30,10" 
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
